@@ -1,10 +1,16 @@
 h1 {
-	font-size: 12sp; 
+	font-size: 12sp;
+	font-style: italic; 
 }
 p {
 	border-style: ridge; 
 	text-indent: 33%;
+	padding: 1cm;
+	background-color: white;
 }
 h2 {
 	color: blue;
+}
+body {
+	background-color: #11fc6b; 
 }
