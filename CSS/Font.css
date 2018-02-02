@@ -1,9 +1,10 @@
-h1 {font-size: 12sp; 
+h1 {
+	font-size: 12sp; 
 }
-p {background; border-style: ridge; text-indent: 33%;
+p {
+	border-style: ridge; 
+	text-indent: 33%;
 }
-h2 {color: blue;
-}
-.blue_txt{
+h2 {
 	color: blue;
 }
