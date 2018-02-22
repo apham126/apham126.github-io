@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+	<title>My Playlist</title>
+	<link rel="stylesheet" href="songsCSS.css">
+	<script>
+	var songs = [
+	{
+		"Title": "La Modelo",
+		"Artist": "Oznuna",
+		"Released": "2017",
+		"Genre": "Reggaeton",
+		Time: 232
+	},
+	{
+		"Title": "Look Alive",
+		"Artist": "BlocBoy JB",
+		"Released": "2018".
+		"Genre": "Rap".
+		Time: 213
+	},
+	{
+		"Title": "King's Dead",
+		"Artist": "Kendrick Lamar",
+		"Released": "2018",
+		"Genre": "Rap",
+		Time: 298
+	},
+	{
+		"Title": "Narcos",
+		"Artist": "Migos",
+		"Released": "2018".
+		"Genre": "Rap".
+		Time: 261
+	},
+	{
+		"Title": "Cambridge",
+		"Artist": "Kina Grannis",
+		"Released": "2010",
+		"Genre": "Pop".
+		Time: 198
+	}
+	];
+	</script>
+
+</head>
+
+<body>
+	
+	<h1>JavaScript Objects</h1>
+	<h2 class="title">Songs Table</h2>
+	
+	<table border=1 class="center">
+		<thead>
+			<tr>
+				<th>Title</th><th>Artist</th><th>Released</th><th>Genre</th><th>Time (s)</th>
+			</tr>
+		</thead>
+		<tbody id="playlist"></tbody>
+
+		<thead>
+			<tr>
+				<th>Song Count</th><th>Artist Count</th><th>Total Time (s)</th>
+			</tr>
+		</thead>
+		<tbody id="stats"></tbody>
+	</table>
+
+	<script>
+	// function addTime(t) {
+	// 	var totalTime = 0;
+	// 	for (var i = 0; i < t.length; i++) {
+	// 		if (!NaN(t[i])) {
+	// 			totalTime += t[i]
+	// 		}
+	// 	}
+	// 	return totalTime;
+	// }
+	var totalTime = 0;
+	for (var t in songs) {
+		if (!isNaN(songs[t])) {
+			totalTime += songs[t];
+		}
+	}
+
+	var count = 0;
+	var statData = ""
+	var data = ""
+	for (var x in songs) {
+		if (songs.hasOwnProperty(x)) {
+			++count;
+			var obj = songs[x];
+			data += "<tr><td>" + obj['Title'] + "</td><td>" + obj['Artist'] + "</td><td>" + obj['Released'] + "</td><td>" + obj['Genre'] + "</td><td>" + obj['Time'] + "</td></tr>"
+		}
+	}
+	statData += "<tr><td>" + count + "</td><td>" + count + "</td><td>" + totalTime + "</td></tr>"
+	document.getElementById("playlist").innerHTML = data;
+	document.getElementById("stats").innerHTML = statData;
+
+	</script>
+
+
+	<h2><a href="https://apham126.github.io/">Click here</a> to go back to my index page</h2>
+
+</body>
+
+</html>
