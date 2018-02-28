@@ -3,43 +3,43 @@
 
 <head>
 	<title>My Playlist</title>
-	<link rel="stylesheet" href="songsCSS.css">
+	<link rel="stylesheet" href="CSS/Font.css">
 	<script>
 	var songs = [
 	{
-		"Title": "La Modelo",
+		"Song": "La Modelo",
 		"Artist": "Oznuna",
 		"Released": "2017",
 		"Genre": "Reggaeton",
-		Time: 232
+		"Time": 232
 	},
 	{
-		"Title": "Look Alive",
+		"Song": "Look Alive",
 		"Artist": "BlocBoy JB",
-		"Released": "2018".
-		"Genre": "Rap".
-		Time: 213
+		"Released": "2018",
+		"Genre": "Rap",
+		"Time": 213
 	},
 	{
-		"Title": "King's Dead",
+		"Song": "King's Dead",
 		"Artist": "Kendrick Lamar",
 		"Released": "2018",
 		"Genre": "Rap",
-		Time: 298
+		"Time": 298
 	},
 	{
-		"Title": "Narcos",
+		"Song": "Narcos",
 		"Artist": "Migos",
-		"Released": "2018".
-		"Genre": "Rap".
-		Time: 261
+		"Released": "2018",
+		"Genre": "Rap",
+		"Time": 261
 	},
 	{
-		"Title": "Cambridge",
+		"Song": "Cambridge",
 		"Artist": "Kina Grannis",
 		"Released": "2010",
-		"Genre": "Pop".
-		Time: 198
+		"Genre": "Pop",
+		"Time": 198
 	}
 	];
 	</script>
@@ -49,16 +49,17 @@
 <body>
 	
 	<h1>JavaScript Objects</h1>
-	<h2 class="title">Songs Table</h2>
+	<h2 class="song">Songs Table</h2>
 	
 	<table border=1 class="center">
 		<thead>
 			<tr>
-				<th>Title</th><th>Artist</th><th>Released</th><th>Genre</th><th>Time (s)</th>
+				<th>Song</th><th>Artist</th><th>Released</th><th>Genre</th><th>Time (s)</th>
 			</tr>
 		</thead>
 		<tbody id="playlist"></tbody>
-
+	</table>
+	<table border=1 class="center">
 		<thead>
 			<tr>
 				<th>Song Count</th><th>Artist Count</th><th>Total Time (s)</th>
@@ -68,30 +69,22 @@
 	</table>
 
 	<script>
-	// function addTime(t) {
-	// 	var totalTime = 0;
-	// 	for (var i = 0; i < t.length; i++) {
-	// 		if (!NaN(t[i])) {
-	// 			totalTime += t[i]
-	// 		}
-	// 	}
-	// 	return totalTime;
-	// }
 	var totalTime = 0;
-	for (var t in songs) {
-		if (!isNaN(songs[t])) {
-			totalTime += songs[t];
-		}
-	}
+	//for (var t in songs) {
+	//	if (!isNaN(songs[t])) {
+	//		totalTime += songs[t];
+	//	}
+	//}
 
 	var count = 0;
-	var statData = ""
-	var data = ""
+	var statData = "";
+	var data = "";
 	for (var x in songs) {
+		console.log(songs);
 		if (songs.hasOwnProperty(x)) {
 			++count;
 			var obj = songs[x];
-			data += "<tr><td>" + obj['Title'] + "</td><td>" + obj['Artist'] + "</td><td>" + obj['Released'] + "</td><td>" + obj['Genre'] + "</td><td>" + obj['Time'] + "</td></tr>"
+			data += "<tr><td>" + obj['Song'] + "</td><td>" + obj['Artist'] + "</td><td>" + obj['Released'] + "</td><td>" + obj['Genre'] + "</td><td>" + obj['Time'] + "</td></tr>"
 		}
 	}
 	statData += "<tr><td>" + count + "</td><td>" + count + "</td><td>" + totalTime + "</td></tr>"
@@ -101,7 +94,7 @@
 	</script>
 
 
-	<h2><a href="https://apham126.github.io/">Click here</a> to go back to my index page</h2>
+	<h3><a href="https://apham126.github.io/">Click here</a> to go back to my index page</h3>
 
 </body>
 
