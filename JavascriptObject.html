@@ -80,10 +80,10 @@
 	var statData = "";
 	var data = "";
 	for (var x in songs) {
-		console.log(songs);
 		if (songs.hasOwnProperty(x)) {
 			++count;
 			var obj = songs[x];
+			totalTime += obj['Time'];
 			data += "<tr><td>" + obj['Song'] + "</td><td>" + obj['Artist'] + "</td><td>" + obj['Released'] + "</td><td>" + obj['Genre'] + "</td><td>" + obj['Time'] + "</td></tr>"
 		}
 	}
